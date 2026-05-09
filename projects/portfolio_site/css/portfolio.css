@@ -165,3 +165,133 @@
 .portfolio-overlay p{
     color: #cbd5e1;
 }
+
+/* ===== LIGHTBOX ===== */
+
+
+.lightbox{
+    position: fixed;
+
+
+    top: 0;
+    left: 0;
+
+
+    width: 100%;
+    height: 100%;
+
+
+    background: rgba(0,0,0,0.95);
+
+
+    display: flex;
+
+
+    justify-content: center;
+    align-items: center;
+
+
+    opacity: 0;
+
+
+    visibility: hidden;
+
+
+    transition: all 0.3s ease;
+
+
+    z-index: 9999;
+}
+
+
+/* ===== SHOW LIGHTBOX ===== */
+
+
+.lightbox:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ===== LIGHTBOX IMAGE ===== */
+
+
+.lightbox img{
+    width: 80%;
+
+
+    max-width: 900px;
+
+
+    max-height: 80vh;
+
+
+    object-fit: contain;
+
+
+    border-radius: 12px;
+}
+
+
+/* ===== CLOSE BUTTON ===== */
+
+
+.lightbox-close{
+    position: absolute;
+
+
+    top: 20px;
+    right: 30px;
+
+
+    font-size: 50px;
+
+
+    color: white;
+
+
+    text-decoration: none;
+
+
+    transition: 0.3s;
+}
+
+
+.lightbox-close:hover{
+    color: var(--color-primary);
+}
+
+
+/* ===== TABLET ===== */
+
+
+@media (max-width: 1024px){
+
+
+    .portfolio-grid{
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* ===== MOBILE ===== */
+
+
+@media (max-width: 768px){
+
+
+    .portfolio-grid{
+        grid-template-columns: 1fr;
+    }
+
+
+    .portfolio-section h2{
+        font-size: 40px;
+    }
+
+
+    .lightbox img{
+        width: 95%;
+    }
+}
